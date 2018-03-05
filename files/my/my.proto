@@ -1,19 +1,17 @@
 syntax = "proto3";
-option go_package = "github.com/iwangxiaodong/grpc-common/files/my";
-
 package my;
-
+option go_package = "github.com/iwangxiaodong/grpc-common/files/my";
 import public "google/protobuf/timestamp.proto";
 
 message RequestAndResponse {
-  //StatusInfo status = 1;
+  StatusInfo status = 1;
   string value = 2;
   repeated string values = 3;
   google.protobuf.Timestamp timeValue = 4;
   map<string, string> mapValue = 5; 
 }
 
-//enum StatusInfo {
-//  OK = 0;
-//  ERROR = 1;
-//}
+enum StatusInfo {
+  OK = 0;
+  ERROR = 1;
+}
